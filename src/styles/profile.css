@@ -1,0 +1,177 @@
+
+.user-profile-container {
+  width:80%;
+  display: flex;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  justify-content: right;
+  font-family: Arial, sans-serif;
+  align-self: center;
+}
+.sidebar {
+width: 200px;
+background-color: "";
+color: white;
+padding: 0px;
+}
+
+.logo {
+font-size: 24px;
+font-weight: bold;
+text-align: center;
+margin-bottom: 0px;
+}
+
+.menu {
+list-style: none;
+padding: 50px;
+}
+
+.menu li {
+padding: 10px;
+cursor: pointer;
+display: cover;
+align-items: center;
+}
+
+.menu li i {
+margin-right: 10px;
+}
+
+.submenu {
+list-style: none;
+padding-left: 4px;
+display: block;
+}
+
+.submenu li {
+padding: 0px 0;
+}
+
+.submenu li a {
+color: black;
+text-decoration: none;
+font-size: 14px;
+}
+
+.submenu li a:hover {
+text-decoration: underline;
+}
+
+.profile-content {
+flex: 1;
+padding: 50px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.profile-image {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+}
+
+
+.form-buttons {
+  display: flex;
+  justify-content: left;
+  margin-top: 10px;
+  gap: 15px;
+padding: 20px
+}
+.save-btn,
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+font-size: 16px;
+}
+.save-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.save-btn:hover {
+  background-color: #45a049;
+}
+
+.cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+@media (max-width: 1000px) {
+  .user-profile-container {
+    width: 45%;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.top-frame {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #f8f9fa;
+padding: 10px 20px;
+height: 60px;
+border-bottom: 2px solid #ddd;
+}
+
+/* Logo on the left */
+.logo img {
+height: 40px; /* Adjust as needed */
+}
+
+/* Icons on the right */
+.top-icons {
+display: flex;
+align-items: center;
+gap: 15px; /* Space between icons */
+}
+
+.top-icons svg {
+cursor: pointer;
+transition: transform 0.2s ease-in-out;
+}
+
+.top-icons svg:hover {
+transform: scale(1.1);
+}
