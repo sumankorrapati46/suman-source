@@ -4,6 +4,7 @@
   padding: 0px;
   box-sizing: "";
   font-family: Arial, sans-serif;
+  
 }
 
 
@@ -11,6 +12,7 @@
   display: cover;
   flex-direction: column;
   height: 100vh;
+  border: 0px;
 }
 
 .top-frame {

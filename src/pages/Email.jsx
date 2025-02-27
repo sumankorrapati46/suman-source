@@ -1,32 +1,32 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Email.css";
-
+import "../styles/Email.css"
 const Email = () => {
   const [email, setEmail] = useState("");
-  const [emails, setEmails] = useState([]);
-  const [showEmailForm, setShowEmailForm] = useState(false);
+  const [emails, setEmails] = useState([]); 
+  const [showEmailForm, setShowEmailForm] = useState(false); 
 
   const handleAddEmail = () => {
     if (email.trim() !== "") {
-      setEmails([...emails, email]);
-      setEmail("");
-      setShowEmailForm(false);
+      setEmails([...emails, email]); 
+      setEmail(""); 
+      setShowEmailForm(false); 
     }
   };
 
   return (
-    <div className="container">
+    <div>
       <h1>Email Address</h1>
+    
+      <p>
+      <h2>My Email Address</h2> 
+        You can use the following email addresses to sign in to your account and also to reset your password if you ever forget it.
+      </p>
 
-      {/* Unified Section */}
-      <section className="email-section">
-        <h2>My Email Address</h2><br>You can use the following email addresses to sign in to your account and also to reset your password if you ever forget it.
-        </br>
-
-        {/* List of Saved Emails */}
+      <ul className="menu">
+        
         {emails.length > 0 && (
-          <div className="saved-emails">
+          <div>
             <h3>Saved Emails</h3>
             <ul>
               {emails.map((email, index) => (
@@ -36,15 +36,14 @@ const Email = () => {
           </div>
         )}
 
-        {/* Add Email Button */}
-        <div className="add-email-container">
+        <li>
           <Link onClick={() => setShowEmailForm(true)} className="active">
             <i className="fas fa-user"></i> <h2>+ Add Email Address</h2>
           </Link>
 
-          {/* Email Input Form */}
+          
           {showEmailForm && (
-            <div className="email-form">
+            <div className="submenu">
               <p>A one-time password (OTP) will be sent to your email address.</p>
               <h4>Enter your email address</h4>
               <input
@@ -56,8 +55,8 @@ const Email = () => {
               <button onClick={handleAddEmail}>Add</button>
             </div>
           )}
-        </div>
-      </section>
+        </li>
+      </ul>
     </div>
   );
 };

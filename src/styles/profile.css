@@ -155,16 +155,16 @@ height: 60px;
 border-bottom: 2px solid #ddd;
 }
 
-/* Logo on the left */
+
 .logo img {
-height: 40px; /* Adjust as needed */
+height: 40px; 
 }
 
-/* Icons on the right */
+
 .top-icons {
 display: flex;
 align-items: center;
-gap: 15px; /* Space between icons */
+gap: 15px; 
 }
 
 .top-icons svg {

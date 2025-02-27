@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "../App.css";
+import "../styles/Password.css";
 
 const ForgotPassword = () => {
   const validationSchema = Yup.object({

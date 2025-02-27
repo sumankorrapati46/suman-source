@@ -16,29 +16,33 @@ import { BiGridAlt } from "react-icons/bi";
 import Logo from "./assets/Logo.png";
 import "./App.css";
 
-// User profile icon component
+
 const UserProfileIcon = ({ size = 40, color = "blue" }) => {
   return <FaUserCircle size={size} color={color} />;
 };
 
-// Layout Wrapper to include sidebar and frames
+
 const Layout = ({ children }) => {
   return (
     <div className="container">
-      {/* Top Frame */}
+      
       <div className="top-frame">
         <div className="logo">
           <img src={Logo} alt="Logo" />
         </div>
         <div className="top-icons">
-          <UserProfileIcon size={20} color="black" />
+          <Link to="/profile">
+            <UserProfileIcon size={20} color="black" />
+          </Link>
+          <Link to="/profile">
           <BiGridAlt size={20} color="black" />
+          </Link>
         </div>
       </div>
 
-      {/* Bottom Frame (Sidebar + Main Content) */}
+      
       <div className="bottom-frame">
-        {/* Sidebar */}
+        
         <div className="frame frame-25">
           <div className="sidebar">
             <ul className="menu">
@@ -74,7 +78,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
 
-        {/* Main Content */}
+       
         <div className="frame frame-75">{children}</div>
       </div>
     </div>
@@ -90,19 +94,19 @@ function App() {
 }
 
 function AppContent() {
-  const location = useLocation(); // Now inside Router, so it works fine
+  const location = useLocation(); 
 
-  // Routes that should NOT have sidebar and frames
+ 
   const noFrameRoutes = ["/login", "/register", "/forgot-username", "/forgot-password"];
 
   return (
     <Routes>
-      {/* Routes without Frames */}
+      
       {noFrameRoutes.map((path) => (
         <Route key={path} path={path} element={getPageComponent(path)} />
       ))}
 
-      {/* Routes with Sidebar and Frames */}
+      
       <Route
         path="/*"
         element={
@@ -124,7 +128,7 @@ function AppContent() {
   );
 }
 
-// Helper function to return the correct component for full-page routes
+
 function getPageComponent(path) {
   switch (path) {
     case "/login":

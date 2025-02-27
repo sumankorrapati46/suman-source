@@ -1,16 +1,16 @@
 
-  
-  /* Section styling */
   .email-section {
-    padding: 20px;
+    width: 400px;
+    height: 400px;
+    padding: 1px;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 1px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0);
   }
   
-  /* Heading Styles */
+ 
   h1 {
-    text-align: left;
+    text-align: center;
     font-size: 24px;
     
   }
@@ -24,14 +24,14 @@
     font-size: 18px;
     margin-top: 0px;
   }
-  
-  /* Paragraph Styling */
+ 
   p {
+    padding: 30px;
     font-size: 14px;
     color: #555;
   }
   
-  /* Saved Emails List */
+  
   .saved-emails ul {
     list-style-type: none;
     padding: 0;
@@ -44,7 +44,7 @@
     border-radius: 4px;
   }
   
-  /* Add Email Button */
+  
   .add-email-container {
     margin-top: 0px;
   }
@@ -52,20 +52,22 @@
  
   
   .add-email-container i {
+   
     margin-right: 8px;
   }
   
-  /* Email Form */
+  
   .email-form {
- 
+    
     background-color: #f1f1f1;
     border-radius: 4px;
   }
   
   .email-form input {
-    width: 40%;
+    width: 10px;
+    height: 10px;
     padding: 8px;
-    margin: 10px 0;
+    margin: 10px 0px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }

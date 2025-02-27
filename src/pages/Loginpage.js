@@ -6,6 +6,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { MdPerson } from "react-icons/md";
 import {Link } from "react-router-dom";
 import "../styles/Login.css"
+import { FaGoogle, FaMicrosoft, FaLinkedin, FaGithub } from "react-icons/fa";
 
 
 const UserProfileIcon = ({ size = 40, color = "blue" }) => {
@@ -124,6 +125,23 @@ const LoginPage = () => {
                   Don't have an account? <Link to="/rigester">Register</Link>
                 </p>
               </div>
+              <div className="social-login">
+                <p>Or sign in with:</p>
+                <div className="flex gap-4 justify-center mt-2">
+                 <a href="https://accounts.google.com/signin" target="_blank" rel="noopener noreferrer">
+                   <FaGoogle size={30} className="text-red-500 hover:text-red-700" />
+                  </a>
+                 <a href="https://login.microsoftonline.com" target="_blank" rel="noopener noreferrer">
+                   <FaMicrosoft size={30} className="text-blue-600 hover:text-blue-800" />
+                 </a>
+                 <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer">
+                   <FaLinkedin size={30} className="text-blue-500 hover:text-blue-700" />
+                </a>
+                  <a href="https://github.com/login" target="_blank" rel="noopener noreferrer">
+                   <FaGithub size={30} className="text-black hover:text-gray-800" />
+                 </a>
+               </div>
+             </div>
             </Form>
           </div>
         )
