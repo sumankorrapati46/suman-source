@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-import "../App.css";
+import '../styles/Registration.css'; 
 
 const RegistrationForm = () => {
   const [submissionMessage, setSubmissionMessage] = useState('');
@@ -10,23 +10,23 @@ const RegistrationForm = () => {
   const validationSchema = Yup.object({
     firstName: Yup.string().required('First name is required'),
     lastName: Yup.string().required('Last name is required'),
-    displayName: Yup.string().required('Display name is required'),
-    username: Yup.string()
-      .matches(/^[a-zA-Z0-9_]+$/, 'Only letters, numbers, and underscores allowed')
-      .min(3, 'Username must be at least 3 characters')
-      .required('Username is required'),
-    email: Yup.string().email('Invalid email format').required('Email is required'),
+    dateOfBirth: Yup.date().required('Date of birth is required'),
+    gender: Yup.string().required('Gender is required'),
+    country: Yup.string().required('Country/Region is required'),
+    state: Yup.string().required('State is required'),
+    pinCode: Yup.string().matches(/^\d{6}$/, 'Invalid Pin Code').required('Pin Code is required'),
+    timezone: Yup.string().required('Time zone is required'),
+    email: Yup.string().email('Invalid email format').required('Email address is required'),
+    phoneNumber: Yup.string().matches(/^\d{10}$/, 'Invalid phone number').required('Phone number is required'),
     password: Yup.string()
       .min(6, 'Password must be at least 6 characters')
       .matches(/[A-Z]/, 'Must contain at least one uppercase letter')
       .matches(/[a-z]/, 'Must contain at least one lowercase letter')
       .matches(/[0-9]/, 'Must contain at least one number')
       .required('Password is required'),
-    gender: Yup.string().required('Gender is required'),
-    country: Yup.string().required('Country is required'),
-    state: Yup.string().required('State is required'),
-    language: Yup.string().required('Language is required'),
-    timezone: Yup.string().required('Timezone is required'),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref('password'), null], 'Passwords must match')
+      .required('Confirm Password is required'),
   });
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -46,107 +46,90 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="registration-container">
-      <center><h1>ProfilePage</h1></center>
+    <div className="full-frame">
+      <div className="top-container">
+        <img src="/logo.png" alt="Logo" className="top-logo" />
+        <a href="/login" className="login-link">Already a member? Login</a>
+      </div>
+      <div className="container">
+        <h2>Let’s get you started</h2>
+        <p>Enter the details to get going</p>
+      </div>
+      <div className="main-frame">
+  <div className="left-container">
+    <h2 className="form-heading">General Details</h2>
 
-      <Formik
-        initialValues={{
-          firstName: '',
-          lastName: '',
-          displayName: '',
-          email: '',
-          password: '',
-          gender: '',
-          country: '',
-          state: '',
-          language: '',
-          timezone: '',
-        }}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {({ isSubmitting }) => (
-          <Form className="registration-form">
-            <div className="form-group">
-              <label htmlFor="firstName">First Name</label>
-              <Field name="firstName" type="text" />
-              <ErrorMessage name="firstName" component="div" className="error" />
-            </div>
+    <Formik
+      initialValues={{
+        firstName: '',
+        lastName: '',
+        dateOfBirth: '',
+        gender: '',
+        country: '',
+        state: '',
+        pinCode: '',
+        timezone: '',
+        email: '',
+        phoneNumber: '',
+        password: '',
+        confirmPassword: '',
+      }}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      {({ isSubmitting }) => (
+        <Form className="registration-form">
+          <div className="form-grid">
+            {[
+              ['firstName', 'First Name *'],
+              ['lastName', 'Last Name'],
+              ['dateOfBirth', 'Date of Birth *'],
+              ['gender', 'Gender *', 'select', ['Male', 'Female', 'Other']],
+              ['country', 'Country/Region *'],
+              ['state', 'State *'],
+              ['pinCode', 'Pin Code *'],
+              ['timezone', 'Time Zone *'],
+              ['email', 'Email Address *'],
+              ['phoneNumber', 'Phone Number *'],
+              ['password', 'Create Password *', 'password'],
+              ['confirmPassword', 'Confirm Password *', 'password'],
+            ].map(([name, label, type = 'text', options], index) => (
+              <div key={index} className="form-group">
+                <label htmlFor={name}>{label}</label>
+                {options ? (
+                  <Field as="select" name={name} className="input-field">
+                    <option value="">Select {label.split('*')[0]}</option>
+                    {options.map((opt) => (
+                      <option key={opt} value={opt}>{opt}</option>
+                    ))}
+                  </Field>
+                ) : (
+                  <Field name={name} type={type} className="input-field" />
+                )}
+                <ErrorMessage name={name} component="div" className="error" />
+              </div>
+            ))}
+          </div>
 
-            <div className="form-group">
-              <label htmlFor="lastName">Last Name</label>
-              <Field name="lastName" type="text" />
-              <ErrorMessage name="lastName" component="div" className="error" />
-            </div>
+          {/* Buttons */}
+          <div className="button-group">
+            <button type="submit" disabled={isSubmitting} className="btn-primary">
+              {isSubmitting ? 'Registering...' : 'Save'}
+            </button>
+            <button type="button" onClick={() => window.location.reload()} className="btn-secondary">
+              Cancel
+            </button>
+          </div>
+        </Form>
+      )}
+    </Formik>
 
-            <div className="form-group">
-              <label htmlFor="displayName">Display Name</label>
-              <Field name="displayName" type="text" />
-              <ErrorMessage name="displayName" component="div" className="error" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <Field name="email" type="email" />
-              <ErrorMessage name="email" component="div" className="error" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <Field name="password" type="password" />
-              <ErrorMessage name="password" component="div" className="error" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="gender">Gender</label>
-              <Field as="select" name="gender">
-                <option value="">Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-              </Field>
-              <ErrorMessage name="gender" component="div" className="error" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="country">Country</label>
-              <Field name="country" type="text" />
-              <ErrorMessage name="country" component="div" className="error" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="state">State</label>
-              <Field name="state" type="text" />
-              <ErrorMessage name="state" component="div" className="error" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="language">Language</label>
-              <Field name="language" type="text" />
-              <ErrorMessage name="language" component="div" className="error" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="timezone">Timezone</label>
-              <Field name="timezone" type="text" />
-              <ErrorMessage name="timezone" component="div" className="error" />
-            </div>
-
-            
-            <div className="button-group">
-              <button type="submit" disabled={isSubmitting}>
-                {isSubmitting ? 'Registering...' : 'Save'}
-              </button>
-
-              <button type="button" onClick={() => window.location.reload()} className="cancel-btn">
-                Cancel
-              </button>
-            </div>
-          </Form>
-        )}
-      </Formik>
-
-      {submissionMessage && <p className="submission-message">{submissionMessage}</p>}
+        {submissionMessage && <p className="submission-message">{submissionMessage}</p>}
+       </div>
+        <div className="right-container">
+          <img src="/logo3.png" alt="Side Image" width="530px" height="419px"/>
+        </div>
+      </div>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import CountryDropdown from "./CountryDropdown";
 import StateDropdown from "./StateDropdown";
 import LanguageDropdown from "./LanguageDropdown";
 import TimezoneDropdown from "./TimezoneDropdown";
+import "../styles/profile.css";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const Profile = () => {
       <div className="user-profile-container">
         <form>
           <div className="profile-image">
-            <h2><FaUserCircle size={40} color="blue" /></h2>
+            <h2><FaUserCircle size={40} color="black" /></h2>
           </div>
 
           <div className="form-grid">

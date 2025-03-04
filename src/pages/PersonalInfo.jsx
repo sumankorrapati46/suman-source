@@ -11,7 +11,7 @@ const PersonalInfo = () => {
     <div className="personal-info-container">
       <div className="header">
         <div className="profile-icon">
-          <FaUserCircle size={50} color="blue" />
+          <FaUserCircle size={50} color="black" />
         </div>
         <button className="edit-btn" onClick={() => navigate("/profile", { state: userInfo })}>
           Edit

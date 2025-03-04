@@ -1,6 +1,6 @@
 
-.email-container,
-.add-email-container {
+.mobile-container,
+.add-mobile-container {
   max-width: 750px;
   margin: auto;
   background: #fff;
@@ -11,45 +11,47 @@
   text-align: left;
 }
 
-.email-container h2,
-.add-email-container h2 {
+.mobile-container h2,
+.add-mobile-container h2 {
   color: #333;
   font-size: 22px;
   margin-bottom: 15px;
 }
 
-.email {
+.mobile {
   background: #d9d9d9;
   padding: 15px;
   border-radius: 5px;
 }
 
-.email h3,
-.add-email-container h4 {
+.mobile h3,
+.add-mobile-container h4 {
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.email p,
-.add-email-container p {
+.mobile p,
+.add-mobile-container p {
   font-size: 14px;
   margin-bottom: 20px;
   line-height: 1.5;
 }
 
+
 .button-container,
 .button-group {
   display: flex;
   justify-content: center;
+  gap: 10px;
   margin-top: 15px;
 }
 
-.email button,
+.mobile button,
 .button-group button {
   background-color: green;
   border: none;
   width: 50%;
-  padding: 10px;
+  padding: 12px;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -59,18 +61,21 @@
   text-align: center;
 }
 
-.email button:hover,
+.mobile button:hover,
 .button-group button:hover {
   background-color: #0056b3;
 }
 
-.email button a {
+.mobile button a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
-.add-email-container input {
+.add-mobile-container input {
   width: 100%;
   padding: 10px;
   font-size: 14px;
@@ -82,22 +87,21 @@
   height: 42px;
 }
 
-.add-email-container input:focus {
+.add-mobile-container input:focus {
   border-color: green;
   outline: none;
   background: #fff;
 }
 
 @media (max-width: 600px) {
-  .email-container,
-  .add-email-container {
+  .mobile-container,
+  .add-mobile-container {
     width: 90%;
     padding: 15px;
   }
 
-  .email button,
+  .mobile button,
   .button-group button {
-    width: 80%;
+    width: 100%;
   }
 }
-
