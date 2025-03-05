@@ -23,6 +23,7 @@
   .top-icons {
     display: flex;
     gap: 15px;
+    padding: 20px 20px;
   }
   
   .top-icons a {
@@ -90,7 +91,7 @@
   }
   
   .submenu li a:hover {
-    color: #007bff;
+    color: red;
     font-weight: bold;
   }
   

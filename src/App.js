@@ -25,6 +25,9 @@ import { MdPerson } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import { BiGridAlt } from "react-icons/bi";
 import Logo from "./assets/Logo.png";
+import CloseAccountSteps from "./pages/CloseAccountSteps";
+import GridPage from "./pages/Gridpage"
+import UserDropdown from "./pages/Userdropdown"
 import "./styles/Layout.css";
 
 
@@ -38,6 +41,7 @@ const Layout = ({ children }) => {
   const [showSecurityMenu, setShowSecurityMenu] = useState(false);
   const [showSettingMenu, setShowSettingMenu] = useState(false);
   const navigate = useNavigate();
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   return (
 
@@ -46,12 +50,13 @@ const Layout = ({ children }) => {
         <div className="logo">
           <img src={Logo} alt="Logo" />
         </div>
-        <div className="top-icons">
-          <Link to="/profile">
-            <UserProfileIcon size={20} color="black" />
+        <div className="top-right-icon" onClick={() => setDropdownOpen(!isDropdownOpen)}>
+          <Link to="/UserDropdown">
+            <FaUserCircle className="user-icon" size={25}  />
           </Link>
-          <Link to="/profile">
-            <BiGridAlt size={20} color="black" />
+          <UserDropdown isOpen={isDropdownOpen} toggleDropdown={setDropdownOpen} />
+          <Link to="/Grid">
+            <BiGridAlt size={25} color="black" />
           </Link>
         </div>
       </div>
@@ -152,8 +157,11 @@ function AppContent() {
               <Route path="/authorized-websites" element={<AuthorizedWebsites />} />
               <Route path="/add-linked-accounts" element={<AddLinkedAccounts />} />
               <Route path="/linked-accounts" element={<LinkedAccounts />} />
-              <Route path="/close-account" element={<CloseAccount />} /> 
+              <Route path="/close-account" element={<CloseAccount />} />
+              <Route path="/close-account-steps" element={<CloseAccountSteps />} /> 
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/grid" element={<GridPage />} />
+              <Route path="/UserDropdown" element={<UserDropdown />} />
             </Routes>
           </Layout>
         }

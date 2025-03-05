@@ -1,0 +1,99 @@
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .user-icon {
+    color: #cc6633;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .user-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 280px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 1000;
+  }
+  
+  .user-info {
+    background: #d9f2ef;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .user-info h3 {
+    margin: 5px 0;
+  }
+  
+  .user-info p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .sign-out-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .sign-out-btn:hover {
+    background: darkred;
+  }
+  
+  .help-docs {
+    padding: 15px;
+  }
+  
+  .help-docs h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .help-docs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .help-docs li {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .help-docs li:hover {
+    background: #f1f1f1;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .green { color: green; }
+  .orange { color: orange; }
+  .red { color: red; }
+  .teal { color: teal; }
+  .blue { color: blue; }
+  

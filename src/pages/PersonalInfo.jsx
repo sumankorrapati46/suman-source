@@ -10,8 +10,8 @@ const PersonalInfo = () => {
   return (
     <div className="personal-info-container">
       <div className="header">
-        <div className="profile-icon">
-          <FaUserCircle size={50} color="black" />
+        <div className="profile-image">
+          <FaUserCircle size={80} />
         </div>
         <button className="edit-btn" onClick={() => navigate("/profile", { state: userInfo })}>
           Edit

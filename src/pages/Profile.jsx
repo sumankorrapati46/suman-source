@@ -5,7 +5,7 @@ import CountryDropdown from "./CountryDropdown";
 import StateDropdown from "./StateDropdown";
 import LanguageDropdown from "./LanguageDropdown";
 import TimezoneDropdown from "./TimezoneDropdown";
-import "../styles/profile.css";
+import "../styles/Profile.css";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -34,14 +34,14 @@ const Profile = () => {
   };
 
   return (
-    <div className="profile-form">
+    <div className="profile-container">
       <h2>Profile</h2>
+              <div className="profile-form">
+                <div className="profile-image">
+                  <FaUserCircle size={80} />
+                </div>
       <div className="user-profile-container">
         <form>
-          <div className="profile-image">
-            <h2><FaUserCircle size={40} color="black" /></h2>
-          </div>
-
           <div className="form-grid">
             <div className="form-group">
               <label>First Name</label>
@@ -94,6 +94,7 @@ const Profile = () => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };
