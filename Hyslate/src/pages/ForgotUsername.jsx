@@ -1,95 +1,93 @@
-import React, { useState, useRef } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+
 import {Link } from "react-router-dom";
-import * as Yup from "yup";
-import "../App.css";
+import React, { useState } from "react";
+import { FaUser } from "react-icons/fa";
+import "../styles/ForgotUser.css";
 
-const ForgotUsername = () => {
-  const [success, setSuccess] = useState(false);
-  const [errMsg, setErrMsg] = useState("");
-  const errRef = useRef();
+const FORGOT_PASSWORD_URL = "/forgot-username";
+const ForgotUserId = () => {
+  const [emailOrPhone, setEmailOrPhone] = useState("");
+  const [error, setError] = useState("");
 
-  const validationSchema = Yup.object({
-    email: Yup.string()
-      .email("Invalid email format")
-      .required("Email is required"),
-  });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+
+    if (!emailOrPhone) {
+      setError("Email/Phone number is required");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailOrPhone) && !/^\d{10}$/.test(emailOrPhone)) {
+      setError("Enter a valid Email or 10-digit Phone Number");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://your-api.com/forgot-userid", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ emailOrPhone }),
+      });
+
+      if (!response.ok) {
+        if (response.status === 404) {
+          setError("Email/Phone not found.");
+        } else if (response.status === 500) {
+          setError("Server error. Please try again later.");
+        } else if (response.status === 502) {
+          setError("Bad Gateway. Try again later.");
+        } else if (response.status === 402) {
+          setError("Payment required. Contact support.");
+        } else {
+          setError("Something went wrong. Try again.");
+        }
+      } else {
+        alert("User ID recovery link sent to your email/phone.");
+      }
+    } catch (error) {
+      setError("No server response. Please check your connection.");
+    }
+  };
 
   return (
-    <div className="grid grid-cols-2 w-[60%] h-[60vh] border border-gray-400 overflow-hidden mx-auto mt-10">
-      <div className="w-full h-full">
-        <img src="/logo.png" alt="Login" className="w-full h-full object-cover" />
-      </div>
+    <div className="forgot-userid-container">
+      <img src="/logo.png" alt="HInfinity Logo" className="logo" />
 
-      <div className="p-8">
-        {success ? (
-          <section className="text-center">
-            <h1 className="text-2xl font-semibold mb-4">Success!</h1>
-            <p className="text-sm text-gray-600">Your username reset link has been sent to your email.</p>
-            <div className="Login">
-                <Link to="/Login">Return to Login</Link>
+      <div className="content">
+        <div className="forgot-form">
+          <h2>Forgot Email/Id?</h2>
+          <p>
+            Enter your email address, click "Forgot User Id", and we’ll send
+            you a link to reset your user ID.
+          </p>
+          <form onSubmit={handleSubmit}>
+            <div className="input-group">
+              <FaUser className="input-icon" />
+              <input
+                type="text"
+                name="emailOrPhone"
+                placeholder="Email/Phone number"
+                value={emailOrPhone}
+                onChange={(e) => setEmailOrPhone(e.target.value)}
+                required
+              />
             </div>
-          </section>
-        ) : (
-          <>
-            <h2 className="text-2xl font-semibold mb-4 text-center">Forgot Username</h2>
-            <p className="text-sm text-gray-600 mb-6 text-center">
-              Enter your email address below, and we'll send you a link to reset your Username or password.
-            </p>
-            <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">
-              {errMsg}
-            </p>
-
-            <Formik
-              initialValues={{ email: "" }}
-              validationSchema={validationSchema}
-              onSubmit={(values, { setSubmitting, resetForm }) => {
-                console.log("Submitted:", values);
-                setSuccess(true);
-                setErrMsg(""); 
-                setSubmitting(false);
-                resetForm();
-              }}
-            >
-              {({ isSubmitting }) => (
-                <Form className="w-full max-w-sm p-6 bg-white rounded shadow-md">
-                  <div className="mb-4">
-                    <label htmlFor="email" className="block text-sm font-medium">
-                      Enter your Email
-                    </label>
-                    <Field
-                      name="email"
-                      type="email"
-                      placeholder="Enter your email"
-                      className="w-full p-2 border rounded mt-1"
-                    />
-                    <ErrorMessage name="email" component="div" className="text-red-500 text-xs mt-1" />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-blue-500 text-white p-2 rounded mt-2"
-                  >
-                    {isSubmitting ? "Submitting..." : "Submit"}
-                  </button>
-                </Form>
-              )}
-            </Formik>
-            <div className="flex items-center justify-center bg-gray-200 text-[6px] text-center p-1">
-        <img
-          src="/logo1.png" 
-          alt="Login"
-          className="w-full h-full object-cover"
-        />
-      </div>
-          </>
-          
-        )}
+            {error && <p className="error-message">{error}</p>}
+            <button type="submit" className="forgot-btn">
+              Forgot User Id
+            </button>
+            <div className="Login">
+              <Link to="/Login">Return to Login</Link>
+            </div>
+          </form>
+        </div>
+        <div className="forgot-image">
+          <img src="/logo1.png" alt="Forgot User ID" />
+        </div>
       </div>
     </div>
   );
 };
 
-export default ForgotUsername;
-
+export default ForgotUserId;

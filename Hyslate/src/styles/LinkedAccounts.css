@@ -1,0 +1,132 @@
+
+.linked-container,
+.linked-accounts-container {
+    max-width: 850px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+ 
+  .linked-container,
+  .linked-accounts-container h2 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .linked-container,
+  .linked-accounts-box {
+    background: #e0e0e0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .linked-accounts {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .linked-accounts-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .linked-accounts-box p {
+    font-size: 14px;
+    color: #666;
+  }
+  .linked-accounts button {
+    background-color: #28a745; 
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  
+  .button:hover {
+    background-color: #007bff; 
+  }
+  
+  .social-login-container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .social-login-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+ 
+  .social-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+ 
+  .social-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    transition: background 0.3s;
+  }
+  
+  .google { background: #f38f64; color: #333; border: 1px solid #ccc; }
+  .microsoft { background: black; }
+  .linkedin { background: #6ddb8e; }
+  .facebook { background: #3b5998; }
+  .twitter { background: #1da1f2; }
+  .apple { background: black; }
+  .github { background: black; }
+  
+  .google:hover { background: #eee; }
+  .microsoft:hover { background: #333; }
+  .linkedin:hover { background: #005582; }
+  .facebook:hover { background: #2d4373; }
+  .twitter:hover { background: #0d95e8; }
+  .apple:hover { background: #333; }
+  .github:hover { background: #333; }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .social-buttons {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .social-buttons {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  

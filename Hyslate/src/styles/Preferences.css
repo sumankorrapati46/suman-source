@@ -1,0 +1,126 @@
+.preferences-container {
+    width: 75%;
+    margin: auto;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .setting-item {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .setting-item h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .setting-item p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .setting-item select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 10px;
+  }
+  
+  .profile-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 500px;
+  }
+  
+  .profile-btn:hover {
+    background: #0056b3;
+  }
+  
+  /* Toggle Switch */
+  .toggle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toggle-switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+  }
+  
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+  
+  .toggle-switch input:checked + .slider {
+    background: #007bff;
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(20px);
+  }
+  
