@@ -4,6 +4,9 @@ import "../styles/CloseAccount.css";
 
 const CloseAccount = () => {
   return (
+    <>
+    <h2 className="Settings-heading">Settings</h2>
+
     <div className="close-account-container">
       <h2>Close Account</h2>
       <p>
@@ -12,7 +15,7 @@ const CloseAccount = () => {
       </p>
 
       <div className="delete-icon">
-        <FaTrashAlt size={50} color="black" />
+        <FaTrashAlt size={70} color="red" />
       </div>
 
       <p className="warning-text">
@@ -24,6 +27,7 @@ const CloseAccount = () => {
         <a href="/close-account-steps" className="close-account"><button className="close-account-button">Close Account</button> </a>
       </div>
     </div>
+    </>
   );
 };
 

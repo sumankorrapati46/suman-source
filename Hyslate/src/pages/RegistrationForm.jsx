@@ -24,7 +24,6 @@ const RegistrationForm = () => {
   const handleCountryChange = async (country, setFieldValue) => {
     setFieldValue("country", country);
     setStates([]);
-
     if (country === "United States") { 
       axios.get("https://api.example.com/states/US")
         .then(response => setStates(response.data))
@@ -79,7 +78,10 @@ const RegistrationForm = () => {
   return (
     <div className="registration-container">
       <div className="top-bar">
-        <img src="/logo.png" alt="HInfinity Logo" className="logo" />
+        <img src="/logo.png" alt="HInfinity Logo" className="logo"  />
+        <span className="brand-name">
+        <span className="separator">|</span> solutions
+        </span>
         <p className="login-link">
           Already a member? <Link to="/login">Login</Link>
         </p>

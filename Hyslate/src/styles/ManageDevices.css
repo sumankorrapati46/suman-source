@@ -1,0 +1,76 @@
+
+.manage-devices-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.manage-devices-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.manage-devices-container p {
+  font-size: 16px;
+  color: red;
+}
+
+.device-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.device-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.device-list li div {
+  text-align: left;
+}
+
+.device-list li strong {
+  font-size: 18px;
+  color: #222;
+}
+
+.device-list li p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.cancel {
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 14px;
+  width: 30%;
+}
+.remove-btn {
+  background-color: #ff4d4d;
+  color: white;
+  width: 300px;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0px;
+  transition: 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: #d93636;
+}
+

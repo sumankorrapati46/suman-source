@@ -30,12 +30,14 @@ const DeviceSignIns = () => {
     } catch (err) {
       setError("Error removing device. Try again.");
     }
-  };
-
+  }; 
+     
+  
   return (
+    <>
+    <h2 className="Security-heading">Security</h2>
     <div className="device-container">
       <h2>Device Sign-ins</h2>
-      
       <div className="device-signin">
         <h3>My Devices</h3>
         <p>
@@ -66,6 +68,7 @@ const DeviceSignIns = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

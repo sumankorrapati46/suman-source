@@ -8,6 +8,8 @@ const PersonalInfo = () => {
   const userInfo = location.state || {}; 
 
   return (
+    <>
+    <h2 className="Profile-heading">Profile</h2>
     <div className="personal-info-container">
       <div className="header">
         <div className="profile-image">
@@ -35,8 +37,9 @@ const PersonalInfo = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
-export default PersonalInfo;
+export default PersonalInfo; 
 

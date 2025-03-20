@@ -30,18 +30,19 @@ import GridPage from "./pages/Gridpage";
 import UserDropdown from "./pages/Userdropdown";
 import "./styles/Layout.css";
 
-const Layout = ({ children }) => {
-  const [showProfileMenu, setShowProfileMenu] = useState(false);
-  const [showSecurityMenu, setShowSecurityMenu] = useState(false);
-  const [showSettingMenu, setShowSettingMenu] = useState(false);
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const navigate = useNavigate();
+  const Layout = ({ children }) => {
+   const [showProfileMenu, setShowProfileMenu] = useState(false);
+   const [showSecurityMenu, setShowSecurityMenu] = useState(false);
+   const [showSettingMenu, setShowSettingMenu] = useState(false);
+   const [isDropdownOpen, setDropdownOpen] = useState(false);
+   const navigate = useNavigate();
 
   return (
+
     <div className="container">
       <div className="top-frame">
-        <div className="logo">
-          <img src={Logo} alt="Logo" />
+        <div className="Logo">
+        <img src={Logo} alt="Logo" className="logo" />
         </div>
         <div className="top-right-icon" onClick={() => setDropdownOpen(!isDropdownOpen)}>
           <Link to="/UserDropdown">
@@ -53,6 +54,7 @@ const Layout = ({ children }) => {
           </Link>
         </div>
       </div>
+
 
       <div className="bottom-frame">
         <div className="frame frame-25">
@@ -116,12 +118,14 @@ function AppContent() {
   const noFrameRoutes = ["/login", "/register", "/forgot-username", "/forgot-password"];
 
   return (
+
     <Routes>
       <Route path="/" element={<Navigate to="/register" replace />} />
 
       {noFrameRoutes.map((path) => (
         <Route key={path} path={path} element={getPageComponent(path)} />
       ))}
+
 
       <Route
         path="/*"
@@ -154,6 +158,7 @@ function AppContent() {
     </Routes>
   );
 }
+
 
 function getPageComponent(path) {
   switch (path) {

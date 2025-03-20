@@ -1,6 +1,6 @@
 
 .device-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   background: #fff;
   padding: 20px;
@@ -16,7 +16,7 @@
 }
 
 .device-signin {
-  background: #e8e5e5;
+  background: whitesmoke;
   padding: 15px;
   border-radius: 5px;
 }
@@ -80,7 +80,7 @@
 }
 
 .manage-btn {
-  background-color: #007bff;
+  background-color: green;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -103,19 +103,21 @@
 }
 
 .loading {
-  color: #555;
+  color: red;
   font-size: 14px;
   text-align: center;
 }
 
 @media (max-width: 600px) {
   .device-item {
+    width: 90%;
+    padding: 15px;
     flex-direction: column;
     text-align: center;
   }
 
   .remove-btn {
-    margin-top: 10px;
+    margin-top: 100px;
   }
 
   .manage-btn {

@@ -40,8 +40,10 @@ const PreferencesPage = () => {
   };
 
   return (
-    <div className="preferences-container">
-      <h2 className="page-title">Settings</h2>
+    <>
+    <h2 className="Settings-heading">Settings</h2>
+
+    <div className="preferences-container"> 
 
       <div className="section">
         <h3>Preferences</h3>
@@ -114,6 +116,7 @@ const PreferencesPage = () => {
         </label>
       </div>
     </div>
+    </>
   );
 };
 

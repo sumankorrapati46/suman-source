@@ -1,6 +1,6 @@
 
 .email-container {
-  max-width: 750px;
+  max-width: 900px;
   margin: auto;
   background: #fff;
   padding: 20px;
@@ -17,7 +17,7 @@
 }
 
 .email {
-  background: #d9d9d9;
+  background:whitesmoke;
   padding: 15px;
   border-radius: 5px;
 }
@@ -79,7 +79,7 @@
 }
 
 .add-email-container {
-  max-width: 500px;
+  max-width: 900px;
   margin: auto;
   background: #fff;
   padding: 20px;
@@ -96,7 +96,7 @@
 
 .email-form,
 .otp-form {
-  background: #d7d7d7;
+  background: whitesmoke;
   padding: 20px;
   border-radius: 5px;
   text-align: center;
@@ -104,16 +104,16 @@
 
 .email-form input,
 .otp-form input {
-  width: 100%;
+  width: auto;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background: #fff;
-  transition: 0.3s;
+  background: whitesmoke;
+  transition: 1.3s;
   box-sizing: border-box;
   height: 42px;
-  text-align: center;
+  
 }
 
 .email-form input:focus,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../App.css";
+import "../styles/ManageDevices.css";
 
 const ManageDevices = () => {
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ const ManageDevices = () => {
         <p>No active devices found.</p>
       )}
 
-      <button className="cancel-btn" onClick={() => navigate("/device-signins")}>
+      <button className="cancel" onClick={() => navigate("/device-signins")}>
         Back to Device Sign-ins
       </button>
     </div>

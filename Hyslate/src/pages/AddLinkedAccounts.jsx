@@ -24,8 +24,10 @@ const LinkedAccounts = () => {
   };
 
   return (
+    <>
+    <h2 className="Settings-heading">Settings</h2>
+
     <div className="linked-accounts-container">
-      <h2>Settings</h2>
 
       <div className="linked-accounts-box">
         <h3>Linked Accounts</h3>
@@ -61,6 +63,7 @@ const LinkedAccounts = () => {
         {error && <p className="error-message">{error}</p>}
       </div>
     </div>
+    </>
   );
 };
 

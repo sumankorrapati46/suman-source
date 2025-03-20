@@ -37,6 +37,9 @@ const ChangePassword = () => {
   };
 
   return (
+    <>
+    <h2 className="Security-heading">Security</h2>
+
     <div className="security-container">
       <h2> Password </h2>
 
@@ -44,7 +47,8 @@ const ChangePassword = () => {
         {error && <p className="error-message">{error}</p>}
         <p>Set a strong password to prevent unauthorized access to your account. </p>
         <div className="form-group">
-          <label>Current Password</label> <Link to="/Forgot-password">Forgot Password</Link>
+          <label>Current Password</label> 
+          
           <input
             type="password"
             placeholder="Enter current password"
@@ -77,8 +81,10 @@ const ChangePassword = () => {
         </div>
 
         <button type="submit" className="submit-btn">Change Password</button>
+        <Link to="/Forgot-password"  className="forgot-password-link">Forgot Password</Link>
       </form>
     </div>
+    </>
   );
 };
 

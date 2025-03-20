@@ -59,6 +59,9 @@ const AddMobileNumber = () => {
   };
 
   return (
+    <>
+    <h2 className="Mobile Number-heading">Mobile Number</h2>
+
     <div className="add-mobile-container">
       <h2>Add Mobile Number</h2>
 
@@ -110,6 +113,7 @@ const AddMobileNumber = () => {
         </form>
       )}
     </div>
+    </>
   );
 };
 

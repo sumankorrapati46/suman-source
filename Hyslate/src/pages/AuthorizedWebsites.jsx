@@ -4,8 +4,10 @@ import "../styles/AuthorizedWebsites.css";
 
 const AuthorizedWebsites = () => {
   return (
+    <>
+    <h2 className="Settings-heading">Settings</h2>
+
     <div className="authorized-container">
-      <h2>Settings</h2>
       
       <form className="authorized-websites">
         <h3>Authorized Websites</h3>
@@ -17,6 +19,7 @@ const AuthorizedWebsites = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 

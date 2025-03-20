@@ -54,6 +54,9 @@ const AddEmailAddress = () => {
   };
 
   return (
+    <>
+    <h2 className="Email Address-heading">Email Address</h2>
+
     <div className="add-email-container">
       <h2>Add Email Address</h2>
 
@@ -99,6 +102,7 @@ const AddEmailAddress = () => {
         </form>
       )}
     </div>
+    </>
   );
 };
 

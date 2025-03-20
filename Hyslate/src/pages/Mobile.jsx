@@ -4,8 +4,11 @@ import "../styles/Mobile.css";
 
 const Mobile = () => {
   return (
+    <>
+    <h2 className="Mobile Number-heading">Mobile Number</h2>
+
     <div className="mobile-container">
-      <h2>Mobile Number</h2>
+      
       
       <form className="mobile">
         <h3>My Mobile Numbers</h3>
@@ -17,6 +20,7 @@ const Mobile = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 

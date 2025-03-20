@@ -26,7 +26,7 @@ const Profile = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    navigate("/personal-info", { state: formData }); 
+    navigate("/personal-info", { state: formData });  
   };
  
   const handleCancel = () => {

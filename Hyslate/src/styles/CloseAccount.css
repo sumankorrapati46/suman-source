@@ -1,5 +1,5 @@
 .close-account-container {
-    max-width: 700px;
+    max-width: 900px;
     margin: auto;
     background: #fff;
     padding: 20px;
@@ -28,6 +28,7 @@
   }
   
   .delete-icon {
+    color: red;
     text-align: center;
     margin: 20px 0;
   }

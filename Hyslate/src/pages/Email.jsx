@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "../styles/Email.css";
 
 const Email = () => {
   return (
+    <>
+    <h2 className="Email Address-heading">Email Address</h2>
+
     <div className="email-container">
-      <h2>Email Address</h2>
-      
+
       <form className="email">
         <h3>My Email Address</h3>
         <p>
@@ -18,6 +19,7 @@ const Email = () => {
         </button>
       </form>
     </div>
+    </>
   );
 };
 
